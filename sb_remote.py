@@ -135,10 +135,7 @@ async def do_skip_now (segments, position, remote):
                 write_saynow()
                 os.system('./saynow.sh "%s"' % (s[0]))
             if padding > 0.1:
-                prewait = padding * 0.8
-
-            print ("Skipping '%s' from %d to %d (%.2f prewait)" % (s[0], s[1], s[2], prewait))
-            
+                prewait = padding * 0.8            
             if prewait > 0.0:
                 await asyncio.sleep(prewait)
             await remote.set_position(int(s[2]))

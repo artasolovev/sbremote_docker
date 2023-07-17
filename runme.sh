@@ -1,6 +1,12 @@
 #!/bin/bash
 
 #Checking python version
+echo "Checking ENV ..."
+if [[ -d env ]]; then
+	source env/bin/activate
+fi
+
+#Checking python version
 echo "Checking python version ..."
 PYEXE="python"
 PV=$($PYEXE -c "import sys; sys.stdout.write(str(sys.version_info.major));")
