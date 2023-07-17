@@ -12,7 +12,7 @@ from yaspin import yaspin
 pair = pyatv.pair
 Protocol = pyatv.const.Protocol
 
-output_filename = "appletv.json"
+output_filename = "/data/appletv.json"
 
 async def scan(loop):
     with yaspin(text="Scanning") as sp:
@@ -20,8 +20,7 @@ async def scan(loop):
     
     #print ("Scanning...", end="", flush=True)
     #print ("done", flush=True)
-
-    print ("Select the number for the ATV to pair with:\n")
+    
     ar = {}
     names = {}
     choices = []
@@ -32,8 +31,9 @@ async def scan(loop):
     
     questions = [ inquirer.List("atv", message="Select a device to pair with", choices=choices)]
     answers = inquirer.prompt(questions)
-    
+
     name = answers['atv']
+    
     atv = ar[name]
     
     print ("pairing atv %s" % (atv))
