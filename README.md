@@ -28,7 +28,7 @@ Currently, one device for one service instance is supported.
 
 Provide support for multiple devices with a single instance of the service.
 
-### What gets skipped?
+## What gets skipped?
 
 There are a few categories SponsorBlock tracks. They are filler, interaction, intro, music_offtopic, outro, poi_highlight, preview, selfpromo and sponsor. This program by default will skip:
 
