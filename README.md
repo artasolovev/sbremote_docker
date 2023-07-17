@@ -12,12 +12,12 @@ You should just need a local home server (standalone instance or linux-base rout
 
 ## Usage
 
-1. Clone this repository `git clone https://github.com/bsharper/sbremote`
-2. Run `cd sbremote`
+1. Clone this repository `git clone https://github.com/artasolovev/sbremote_docker`
+2. Run `cd sbremote_docker`
 2. Run `docker volume create sbremote_data`. This will create a volume for config file.
-3. Run `docker build -t sbremote .`. This will build sbremote image.
-4. Run `docker run --rm -it --network=host -v sbremote_data:/data sbremote --setup`. This will start setup container. Follow all the steps. If everything is successful, the configuration file will be saved to the sbremote_data. Setup container will remove automatically. 
-5. Run `sudo docker run -d --name SBRemote --restart=unless-stopped --network=host -v sbremote_data:/data sbremote --run`. This will start Sponsorblock service with your config in sbremote_data volume.
+3. Run `docker build -t sbremote_docker .`. This will build sbremote image.
+4. Run `docker run --rm -it --network=host -v sbremote_data:/data sbremote_docker --setup`. This will start setup container. Follow all the steps. If everything is successful, the configuration file will be saved to the sbremote_data. Setup container will remove automatically. 
+5. Run `sudo docker run -d --name SBRemote --restart=unless-stopped --network=host -v sbremote_data:/data sbremote_docker --run`. This will start Sponsorblock service with your config in sbremote_data volume.
 6. That's all! After sometime service will be alive. You can watch logs by `docker logs SBRemote` and report issues for some bugs. 
 
 ## Limitations
