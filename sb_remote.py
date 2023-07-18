@@ -9,7 +9,7 @@ import asyncio
 from pyatv.const import InputAction
 Protocol = pyatv.const.Protocol
 import sb_cache_handler.sb_cache as sb_cache
-import sb_remote_handler.singleton as singleton
+import singleton as singleton
 
 try:
     me = singleton.SingleInstance()

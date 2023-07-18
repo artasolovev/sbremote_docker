@@ -7,4 +7,4 @@ fi
 kill $1 &>/dev/null
 sleep 0.5
 kill -9 $1 &>/dev/null
-python  sb_remote_handler/sb_remote.py
+python  sb_remote.py
