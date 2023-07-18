@@ -11,7 +11,7 @@ name: SBRemote Docker image CI
 
 on:
   push:
-    branches: ['release']
+    branches: ['main']
 
 env:
   REGISTRY: ghcr.io
