@@ -59,7 +59,7 @@ if [[ -d env ]] && [[ -f "/data/appletv.json" ]]; then
 	echo "Everything look's OK, starting service"
 	echo "============================================================"
 	source env/bin/activate
-	python sb_remote.py
+	python sb_remote_handler/sb_remote.py
 else 
 	echo "============================================================"
 	echo "Opps! Something wrong!"
