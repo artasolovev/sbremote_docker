@@ -25,6 +25,7 @@ You should just need a local home server (standalone instance or linux-base rout
 4. Run 
    ```console
    docker run -d \
+   --name SBRemote(DEV) \
    --name SBRemote \
    --restart=unless-stopped \
    --network=host \
@@ -45,12 +46,15 @@ You should just need a local home server (standalone instance or linux-base rout
    ```console
    docker run --rm -it \
    --network=host \
+   -v sbremote_data:/data \
+   sbremote_docker \
    -v sbremote_data:/data sbremote_docker \
    --setup
    ```
    This will start setup container. Follow all the steps. If everything is successful, the configuration file will be saved to the sbremote_data. Setup container will remove automatically. 
 6. Run 
    ```console
+   docker run -d \
    sudo docker run -d \
    --name SBRemote \
    --restart=unless-stopped \

@@ -37,7 +37,7 @@ fi
 echo "Checking appletv.json ..."
 if [[ ! -f "/data/appletv.json" ]]; then 
 	source env/bin/activate
-	python pair_and_save.py
+	python atv_ps_handler/pair_and_save.py
 fi
 
 #Checking appletv.json and ENV after setup

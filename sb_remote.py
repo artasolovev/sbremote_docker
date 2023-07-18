@@ -8,13 +8,11 @@ import random
 import asyncio
 from pyatv.const import InputAction
 Protocol = pyatv.const.Protocol
-
-from sb_cache import SBRemoteCache
-
-from singleton import SingleInstance
+import sb_cache_handler.sb_cache as sb_cache
+import singleton as singleton
 
 try:
-    me = SingleInstance()
+    me = singleton.SingleInstance()
 except:
     time.sleep(0.1)
     sys.exit(-1)
@@ -152,7 +150,7 @@ def print_state(txt):
 
 async def connect_atv():
     while not os.path.exists("/data/appletv.json"):
-        from pair_and_save import scan
+        from atv_ps_handler.pair_and_save import scan
         await scan(loop)
     
     data = json.load(open('/data/appletv.json'))
@@ -181,10 +179,10 @@ async def connect_atv():
 
 async def main_loop():
     runstart = time.time()
-    sbrcache = SBRemoteCache(debug=True)
+    sbrcache = sb_cache.SBRemoteCache(debug=False)
     device, remote = await connect_atv()
     if device == None or remote == None:
-        print ("Could not connect to ATV. Try again or attempt pairing again using pair_and_save.py\n")
+        print ("Could not connect to ATV. Try again or attempt pairing again using --setup\n")
         sys.exit(0)
 
     last_state = ""
