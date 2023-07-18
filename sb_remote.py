@@ -179,10 +179,10 @@ async def connect_atv():
 
 async def main_loop():
     runstart = time.time()
-    sbrcache = sb_cache.SBRemoteCache(debug=True)
+    sbrcache = sb_cache.SBRemoteCache(debug=False)
     device, remote = await connect_atv()
     if device == None or remote == None:
-        print ("Could not connect to ATV. Try again or attempt pairing again using pair_and_save.py\n")
+        print ("Could not connect to ATV. Try again or attempt pairing again using --setup\n")
         sys.exit(0)
 
     last_state = ""
