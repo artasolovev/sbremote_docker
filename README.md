@@ -1,3 +1,4 @@
+[![SBRemote Docker image CI](https://github.com/artasolovev/sbremote_docker/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/artasolovev/sbremote_docker/actions/workflows/docker-image.yml)
 # SBRemote for YouTube on Apple TV (Docker)
 
 Use SponsorBlock with YouTube on Apple TV (Docker)
