@@ -25,7 +25,7 @@ You should just need a local home server (standalone instance or linux-base rout
 4. Run 
    ```console
    docker run -d \
-   --name SBRemote \
+   --name SBRemote(DEV) \
    --restart=unless-stopped \
    --network=host \
    -v sbremote_data:/data \
