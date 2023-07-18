@@ -1,7 +1,7 @@
 import os
 import sys
 import json
-from sb_cache_handler.sb_cache import SBRemoteCache
+from sb_cache import SBRemoteCache
 
 args = sys.argv[1:]
 
