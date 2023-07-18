@@ -245,12 +245,12 @@ async def main_loop():
             last_hl = hl            
             stxt = json.dumps(segments)
             if state_changed or hold_count == 0:
-                print_state(str(wp))
-                print ("{:>13} {:}".format("ID:", id))
-                print ("{:>13} {:}".format("Segments:", stxt))
-                if len(skipped_segments) > 0:
-                    print ("{:>13} {:}".format("Skipped:", skipped_segments))
-                print ("")
+                # print_state(str(wp))
+                # print ("{:>13} {:}".format("ID:", id))
+                # print ("{:>13} {:}".format("Segments:", stxt))
+                # if len(skipped_segments) > 0:
+                #     print ("{:>13} {:}".format("Skipped:", skipped_segments))
+                # print ("")
                 hold_count = 5
             else:
                 if hold_count > 0:
